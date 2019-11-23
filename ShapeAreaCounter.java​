@@ -1,0 +1,93 @@
+package pl.tt;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main {
+
+
+    public static double circle(double radius) {
+        final double pi = 3.14;
+
+        return pi * radius * radius;
+    }
+
+    public static double squre(double side) {
+
+        return side * side;
+    }
+
+    public static double rectangle(double side1, double side2) {
+
+        return side1 * side2;
+    }
+
+    public static double trapeze(double upSide, double downSide, double height) {
+
+        return ((upSide + downSide) * height) / 2;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner keyboard = new Scanner(System.in);
+
+        double[] arrayOfFields = new double[4];
+
+        System.out.println("Chcesz obliczyć pole koła, kwadratu, prostokata czy trapezu?");
+
+
+        while (true) {
+
+            String figure = keyboard.nextLine();
+
+            if (figure.equals("kola")) {
+                System.out.println("Podaj promien koła:");
+
+                double radius = keyboard.nextDouble();
+
+                arrayOfFields[0] = circle(radius);
+                System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
+
+            }
+            if (figure.equals("kwadratu")) {
+                System.out.println("Podaj bok kwadratu:");
+
+                double side = keyboard.nextDouble();
+
+                arrayOfFields[1] = squre(side);
+                System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
+
+            }
+            if (figure.equals("prostokata")) {
+                System.out.println("Podaj boki prostokata:");
+
+                double side1 = keyboard.nextDouble();
+                double side2 = keyboard.nextDouble();
+
+                arrayOfFields[2] = rectangle(side1, side2);
+                System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
+
+            }
+            if (figure.equals("trapezu")) {
+                System.out.println("Podaj górną podstawę, dolną podstawę oraz wysokość trapezu: (w tej kolejności)");
+
+                double upSide = keyboard.nextDouble();
+                double downSide = keyboard.nextDouble();
+                double height = keyboard.nextDouble();
+
+                arrayOfFields[3] = trapeze(upSide, downSide, height);
+                System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
+
+            }
+
+            if (figure.equals("wynik")) {
+                double sum = 0;
+                for (int i = 0; i < arrayOfFields.length; i++) {
+                    sum += arrayOfFields[i];
+                }
+                System.out.println(sum);
+
+            }
+        }
+    }
+}
