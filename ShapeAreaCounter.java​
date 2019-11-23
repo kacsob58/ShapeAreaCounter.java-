@@ -45,8 +45,10 @@ public class Main {
 
                 double radius = keyboard.nextDouble();
 
-                arrayOfFields[0] = circle(radius);
-                System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
+                double fieldOfCircle = circle(radius);
+                arrayOfFields[1] = fieldOfCircle + arrayOfFields[1];
+
+                        System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
 
             }
             if (figure.equals("kwadratu")) {
@@ -54,7 +56,9 @@ public class Main {
 
                 double side = keyboard.nextDouble();
 
-                arrayOfFields[1] = squre(side);
+                double fieldOfSquere = squre(side);
+                arrayOfFields[2] = fieldOfSquere + arrayOfFields[2];
+
                 System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
 
             }
@@ -64,7 +68,9 @@ public class Main {
                 double side1 = keyboard.nextDouble();
                 double side2 = keyboard.nextDouble();
 
-                arrayOfFields[2] = rectangle(side1, side2);
+                double fieldOfRectangle = rectangle(side1, side2);
+                arrayOfFields[3] = fieldOfRectangle + arrayOfFields[3];
+
                 System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
 
             }
@@ -75,7 +81,9 @@ public class Main {
                 double downSide = keyboard.nextDouble();
                 double height = keyboard.nextDouble();
 
-                arrayOfFields[3] = trapeze(upSide, downSide, height);
+                double fieldOfTrapeze = trapeze(upSide, downSide, height);
+                arrayOfFields[4] = fieldOfTrapeze + arrayOfFields[4];
+
                 System.out.println("Chcesz zobaczyć wynik(sumę pól) czy jakiej kolejnej figury pole chcesz obliczyć i dodać?");
 
             }
