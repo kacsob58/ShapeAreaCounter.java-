@@ -85,7 +85,7 @@ public class Main {
                 for (int i = 0; i < arrayOfFields.length; i++) {
                     sum += arrayOfFields[i];
                 }
-                System.out.println(sum);
+                System.out.println("Syma pól tych figur to :"sum);
                 break;
 
             }
